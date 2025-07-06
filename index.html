@@ -1,8 +1,94 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portia Cooper</title>
+    <script src="bibtex_js.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#research">Research Interests</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h1>Hello world</h1>
+    <!-- Full-Width Background Section -->
+    <section id="hero" class="fullscreen-bg">
+        <div class="hero-content">
+            <h1 class="text">Portia Cooper</h1>             
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="research" class="section">
+        <h2>Research Interests</h2>
+        <p class="text">
+            My interests lie at the intersection of natural language processing and AI security, with a particular focus on
+            building systems resilient to adversarial attacks. I have led studies investigating Unicode perturbation detection,
+            AI-optimized case selection for content moderation, and adversarial text-to-image prompt mitigation. My work
+            reflects a personal commitment to leveraging technology to create a safer, more equitable world.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="publications" class="section">
+        <h2>Publications</h2>
+        <div class="projects-gallery">
+            <textarea id="bibtex_input" style="display:none;">
+                @inproceedings{cooper2023hiding,
+                title={Hiding in plain sight: Tweets with hate speech masked by homoglyphs},
+                author={Cooper, Portia and Surdeanu, Mihai and Blanco, Eduardo},
+                booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
+                pages={2922--2929},
+                year={2023},
+                url={https://aclanthology.org/2023.findings-emnlp.192/}
+                }
+
+                @article{cooper2024finding,
+                title={Finding a Wolf in Sheep's Clothing: Combating Adversarial Text-To-Image Prompts with Text Summarization},
+                author={Cooper, Portia and Narnoli, Harshita and Surdeanu, Mihai},
+                journal={arXiv preprint arXiv:2412.12212},
+                year={2024},
+                url={}
+                }
+            </textarea>
+<div class="bibtex_template">
+    <p>
+        <strong><span class="title"></span></strong>
+        <br>
+        <span class="author"></span>.
+        <em><span class="if journal"><span class="journal"></span>. </span></em>
+        <em><span class="if booktitle"><span class="booktitle"></span>. </span></em>
+        <span class="if pages">pp. <span class="pages"></span>. </span>
+        <span class="if doi">doi:<span class="doi"></span>. </span>
+        <span class="if url"><a class="url">link</a>. </span>
+        <br><br>
+    </p>
+</div>
+
+            <div id="bibtex_display"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <form>
+            <!-- Contact form goes here -->
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Portia Cooper, <span id="current-year"></span> | Last updated: <span id="last-updated"></span>.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
