@@ -1,89 +1,104 @@
-/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    width: 100%;
 }
 
+
+/* nav bar */
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     padding: 20px;
     background: rgba(255, 255, 255, 0.9);
     z-index: 1000;
+    width: 100%;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #3b3737;
     font-size: 18px;
-    padding: 10px;
+    padding: 20px;
 }
 
-.fullscreen-bg {
-    background: url('background-image.jpg') center center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header nav ul li a:hover {
+    color: #000000;
 }
-
-.hero-content h1 {
-    font-size: 50px;
-    color: rgb(0, 0, 0);
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-}
+/* end */
 
 .section {
-    padding: 60px 20px;
+    display: flex;
+    padding-bottom: 5vh;
 }
 
-.projects-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+#pad_in {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    padding-top: 5%;
 }
 
-.project-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Banner styling */
+#banner {
+    height: 20vh;
+    padding-bottom: 3vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top: 5vh;
 }
 
-/* Footer styles */
+#banner h1 {
+    font-size: 50px;
+    /* color: rgb(0, 0, 0); */
+}
+
+#banner a {
+    text-decoration: none;
+    font-size:25px; 
+    color: #3b3737;
+    padding: 3px;
+}
+
+/* #name_flex {
+    display: flex;
+} */
+/* end */
+
+
+/* Research Interests */
+.research-interests {
+    display: flex;
+    align-items: center; 
+    /* gap: 20px;  */
+}
+
+/* end */
+
 footer {
-    background-color: #f1f1f1;  /* Light gray background */
-    color: #333;                /* Dark text color */
-    text-align: center;         /* Center the text */
-    padding: 20px;              /* Add some padding around the text */
-    font-size: 14px;            /* Make the text smaller */
+    background-color: #f1f1f1;  
+    color: #333;                
+    text-align: center;        
+    padding: 20px;              
+    font-size: 14px;            
     position: relative;
     bottom: 0;
-    width: 100%;
-    margin-top: 40px;           /* Space above the footer */
+    /* width: 100%; */
+    margin-top: 40px;           
 }
-
-footer span {
-    font-weight: bold;
-}
-
-

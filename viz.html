@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Homoglyph Visualizer</title>
+    <!-- <title>Top Bar with Checkboxes</title> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Mono";
+      }
+
+      body {
+        margin-top: 50px; /* To make sure content isn't hidden under the bar */
+      }
+
+      .viz {
+        margin: 20px;
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        background-color: #f9f9f9; /* Optional for better contrast */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for a subtle shadow */
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        line-height: 1.6;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+      }
+
+      li {
+        margin-bottom: 1rem;
+      }
+
+      /*         .nested-instructions {
+          list-style-type: circle;
+          margin-top: 0.5rem;
+          margin-left: 1.5rem;
+          padding-left: 1rem;
+        } */
+
+      h1 {
+        color: #222;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+      }
+
+      .explanation {
+        margin: 20px;
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        background-color: #f9f9f9; /* Optional for better contrast */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for a subtle shadow */
+        color: #333;
+        line-height: 1.7;
+        padding: 20px;
+      }
+
+      .explanation h2 {
+        margin-bottom: 10px;
+        color: #444;
+      }
+
+      .explanation a {
+        color: #1a73e8;
+        text-decoration: none;
+      }
+
+      .explanation a:hover {
+        text-decoration: underline;
+      }
+
+      .attackVisualizer {
+        margin: 20px;
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        background-color: #f9f9f9; /* Optional for better contrast */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for a subtle shadow */
+      }
+
+      .top-bar {
+        /* position: fixed; */
+        width: 100%;
+        background-color: #333;
+        padding: 10px 20px;
+        border-radius: 15px 15px 0px 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .checkbox-container {
+        color: white;
+        display: flex;
+        align-items: center;
+      }
+
+      .checkbox-container input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      .viz-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 20px; */
+        /* margin-top: 60px;  */
+      }
+
+      .row {
+        display: flex;
+        /* gap: 20px; */
+      }
+
+      #tools {
+        display: flex;
+        flex-wrap: wrap; /* Allow the items to wrap onto the next line */
+        gap: 20px; /* Add space between the modules */
+        justify-content: space-between; /* Distribute the items evenly with space between */
+      }
+
+      .module {
+        flex: 1 1 calc(33% - 20px); /* Makes each module take up 1/3 of the container's width */
+        box-sizing: border-box; /* Ensures padding and borders don't affect the width */
+        padding: 10px;
+        border: 1px solid #ddd; /* Optional, just for styling */
+        border-radius: 8px; /* Optional, just for styling */
+        background-color: #f9f9f9; /* Optional, just for styling */
+      }
+
+      /* Ensure smaller screens (like mobile) make the modules stack vertically */
+      @media (max-width: 768px) {
+        .module {
+          flex: 1 1 100%; /* Make each module take up the full width of the container */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      A Visual Representation of Homoglyphs and the Latin Letters They Resemble
+    </h1>
+    <div class="explanation">
+      <h2>Homoglyphs</h2>
+      <p>
+        A significant subset of Unicode characters are visually similar to Latin
+        letters but possess disjointed symbolic and linguistic meanings. For
+        example, the Latin "a" and the Cyrillic
+        <a href="https://www.compart.com/en/unicode/U+0430">"a"</a> appear
+        visually homogeneous, but their underlying Unicode code points, U+0061
+        and U+0430, are not equivalent. The noise induced by homoglyphs has
+        ramifications within the fields of cybersecurity and natural language
+        processing, as homoglyphs have been found in material ranging from
+        spoofed domain names to inappropriate tweets.
+      </p>
+      <br />
+      <p>
+        The following visualization allows for a direct comparison between
+        the 26 Latin letters and the non-Latin homoglyphs they have in common,
+        determined by 1) the Unicode Std, 2) a Human Annotator, and 3) GPT 4o as
+        a normalization tool.
+        <br /><br />
+        Color is used to encode the data source of each matrix: The letter
+        visual similarity scores (range 1-7), derived by
+        <a href="https://link.springer.com/article/10.3758/s13428-012-0271-4"
+          >Simpson et al</a
+        >, are depicted in the
+        <span style="color: #1a73e8; font-weight: bold">blue</span> matrix. The
+        common homoglyphs established by the Unicode Standard (std) are
+        presented in the
+        <span style="color: #8b0000; font-weight: bold">red</span> matrix. Both
+        the common homoglyphs determined by a human annotator and the GPT 4o
+        large language model were found through observation of a sample (n=700)
+        of real-world tweets containing homoglyph characters. As such, <span style="font-weight: bold">both</span>
+        matrices are
+        <span style="color: #006400; font-weight: bold">green</span>.
+      </p>
+      <br />
+      <h2>Usage Tips</h2>
+      <ul>
+        <li>
+          Use the checkboxes on the black navbar to toggle visibility of the
+          four matrices.
+        </li>
+        <li>
+          To view the visual similarity score associated with two letters, hover your mouse over
+          the cell in the Letter Visual Similarity matrix. 
+        </li>
+        <li>
+          To view the number of homolgyphs shared between the two letters, hover your mouse over the cell in any of the commonality matrices.
+        </li>
+        <li>
+          To generate a visual overlay of two letters and return their common homoglyphs, click on a cell. 
+          The Letter Overlay will be displayed below the matrices.
+        </li>
+        <li>
+          To highlight a cell across all matrices, use the Search for a Cell
+          feature provided below the matrices.
+        </li>
+        <li>
+          To re-sort all matrices based on the average or maximum score order of
+          one, use the sorting tools provided below the matrices.
+        </li>
+      </ul>
+    </div>
+
+    <div class="viz">
+      <div class="top-bar">
+        <label class="checkbox-container">
+          <input type="checkbox" class="checkbox" id="checkbox1" />
+          <span>Letter Visual Similarity</span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" class="checkbox" id="checkbox2" />
+          <span>Unicode Std Homoglyph Commonality</span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" class="checkbox" id="checkbox3" />
+          <span>Human Homoglyph Commonality</span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" class="checkbox" id="checkbox4" />
+          <span>GPT Homoglyph Commonality</span>
+        </label>
+      </div>
+
+      <div class="viz-container">
+        <div class="row">
+          <div id="slot0" class="slot"></div>
+          <div id="slot1" class="slot"></div>
+        </div>
+
+        <div class="row">
+          <div id="slot2" class="slot"></div>
+          <div id="slot3" class="slot"></div>
+        </div>
+
+        <div id="tools">
+          <div class="module">
+            <form id="clusterForm">
+              <h4>Sort All Based on Average...</h4>
+
+              <label style="color: #4682b4">
+                <input type="radio" name="option" value="0" /> Letter Visual
+                Similarity </label
+              ><br />
+
+              <label style="color: #8b0000">
+                <input type="radio" name="option" value="1" /> Unicode Std HC </label
+              ><br />
+
+              <label style="color: #006400">
+                <input type="radio" name="option" value="2" /> Human HC </label
+              ><br />
+
+              <label style="color: #006400">
+                <input type="radio" name="option" value="3" /> GPT HC </label
+              ><br />
+
+              <label>
+                <input type="radio" name="option" value="reset" /> Reset to
+                alphabetical </label
+              ><br />
+
+              <button>Sort</button>
+            </form>
+          </div>
+
+          <div class="module">
+            <form id="maxClusterForm">
+              <h4>Sort All Based on Maximum...</h4>
+
+              <label style="color: #4682b4">
+                <input type="radio" name="options" value="0" /> Letter Visual
+                Similarity </label
+              ><br />
+
+              <label style="color: #8b0000">
+                <input type="radio" name="options" value="1" /> Unicode Std HC </label
+              ><br />
+
+              <label style="color: #006400">
+                <input type="radio" name="options" value="2" /> Human HC </label
+              ><br />
+
+              <label style="color: #006400">
+                <input type="radio" name="options" value="3" /> GPT HC </label
+              ><br />
+
+              <label>
+                <input type="radio" name="options" value="reset" /> Reset to
+                alphabetical </label
+              ><br />
+
+              <button>Sort</button>
+            </form>
+          </div>
+
+          <div class="module">
+            <h4>Search for a Cell</h4>
+            <form action="/search" method="get" id="search-form">
+              <label for="search-input1">Letter 1:</label>
+              <input
+                type="text"
+                id="search-input1"
+                name="query"
+                placeholder="Enter Latin letter 1..."
+                required
+              />
+              <br />
+              <label for="search-input2">Letter 2:</label>
+              <input
+                type="text"
+                id="search-input2"
+                name="query2"
+                maxlength="1"
+                placeholder="Enter Latin letter 2..."
+                required
+              />
+
+              <button type="submit">Search</button>
+            </form>
+          </div>
+
+          <div class="module" id="letterOverlay">
+            <h4>Letter Overlay</h4>
+          </div>
+
+          <div class="module">
+            <h4>Common Homoglyphs</h4>
+            <br />
+            <p>Unicode Std:</p>
+            <p id="ch0"></p>
+            <br />
+            <p>Human:</p>
+            <p id="ch1"></p>
+            <br />
+            <p>GPT:</p>
+            <p id="ch2"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="d3.js"></script>
+    <script src="computeSimScores.js"></script>
+    <script src="letter.js"></script>
+    <script src="data.js"></script>
+    <script src="viz3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+Reset default browser styles 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.fullscreen-bg {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.research-content {
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+}
+
+.research-image {
+    max-width: 200px; 
+    height: auto; 
+}
+
+.bibtex_template {
+    width: 90%;
+}
+
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #f1f1f1;  
+    color: #333;                
+    text-align: center;        
+    padding: 20px;              
+    font-size: 14px;            
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;           
+}
+
+footer span {
+    font-weight: bold;
+}
+
+
