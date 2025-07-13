@@ -9,7 +9,13 @@
     <link href="fontawesome/fontawesome-free-6.7.2-web/css/fontawesome.css" rel="stylesheet" />
     <link href="fontawesome/fontawesome-free-6.7.2-web/css/brands.css" rel="stylesheet" />
     <link href="fontawesome/fontawesome-free-6.7.2-web/css/solid.css" rel="stylesheet" />
+        <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
 <body>
+    <script src="script.js"></script>
+
     <header id="header">
         <nav>
             <ul>
@@ -25,17 +31,21 @@
 
     <section id="banner" class="section">
         <div id="name_info">
-                <h1 id="homoglyphfy">Portia Cooper</h1>  
+            <span id="animatedText"></span>
+                <h1>Portia Cooper</h1>  
                 <a href="mailto:portiacooper@arizona.edu" class="fa-solid fa-envelope"></a>
                 <a href="https://scholar.google.com/citations?user=aGk7Tu0AAAAJ&hl=en" class="fa-brands fa-google-scholar"></a>
                 <a href="https://www.linkedin.com/in/portia-cooper" class="fa-brands fa-linkedin"></a>
                 <a href="https://github.com/pcoopercoder" class="fa-brands fa-github"></a>
                 <a href="" class="fa-solid fa-file-csv"></a>
-                <br><br>
-                <p>I am a M.S. student in the Department of Computer Science at the University of Arizona. My advisors are Dr. Mihai Surdeanu and Dr. Eduardo Blanco. In 2024, I was awarded the Barry M Goldwater scholarship---an honor 
-                    
-                    Blah blah blah</p>     
+                <br><br> 
         </div>
+    </section>
+
+    <section class="section">
+        <p>I am a M.S. student in the Department of Computer Science at the University of Arizona. My advisors are Dr. Mihai Surdeanu and Dr. Eduardo Blanco. In 2024, I was awarded the Barry M Goldwater scholarship---an honor 
+                    
+                    Blah blah blah</p>    
     </section>
 
 
@@ -70,7 +80,7 @@
                 author={Cooper, Portia and Narnoli, Harshita and Surdeanu, Mihai},
                 journal={arXiv preprint arXiv:2412.12212},
                 year={2024},
-                url={}
+                url={https://arxiv.org/abs/2412.12212}
                 }
         </textarea>
         <div class="bibtex_template">
@@ -82,20 +92,29 @@
                     <em><span class="if booktitle"><span class="booktitle"></span>. </span></em>
                     <span class="if pages">pp. <span class="pages"></span>. </span>
                     <span class="if doi">doi:<span class="doi"></span>. </span>
-                    <span class="if url"><a class="url">link</a>. </span>
+                    <br>
+                    <span class="if url"><a class="url">Read Paper <i class="fa-solid fa-file"></i></a></span>
                     <br><br>
+                    
             </p>
         </div>
         <div>
             <h2>Publications</h2>
             <div id="bibtex_display"></div>
+            <em><p>For more information, please see my Google Scholar profile.</p></em>
         </div>
     </section>
 
     <section id="projects" class="section">
         <div>
-            <h2>Recent Projects</h2>
-            <a href="viz.html" target="_blank">Homoglyph and Latin Letter Visual Similarity Matrix Visualization made with d3.js</a>
+            <h2>Project Spotlight</h2>
+            <p>
+                 A significant subset of Unicode characters are visually similar to Latin letters but possess disjointed symbolic and linguistic meanings. For example, the Latin "a" and the Cyrillic "a" appear visually homogeneous, but their underlying Unicode code points, U+0061 and U+0430, are not equivalent. The noise induced by homoglyphs has ramifications within the fields of cybersecurity and natural language processing, as homoglyphs have been found in material ranging from spoofed domain names to inappropriate tweets.
+<br><br>
+                This visualization allows for a direct comparison between the 26 Latin letters and the non-Latin homoglyphs they have in common, determined by 1) the Unicode Std, 2) a Human Annotator, and 3) GPT 4o as a normalization tool.
+            </p>
+            <br>
+            <a href="viz.html" target="_blank">View the Letter Viual Similarity Matrix</a>
         </div>
         </section>
 
@@ -105,6 +124,5 @@
     <footer>
         <p>Portia Cooper, <span id="current-year"></span> | Last updated: <span id="last-updated"></span>.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

@@ -57,23 +57,31 @@ header nav ul li a:hover {
     padding-top: 5%;
 }
 
+#animatedText span {
+    font-size: 60px;
+    margin: 0px; 
+    padding: 0px;
+    font-family: Arial, sans-serif;
+}
+
 /* Banner Styling */
 #banner {
-    height: 20vh;
-    padding-bottom: 3vh;
-    display: flex;
-    align-items: center;
+    /* height: 20vh; */
+    padding-bottom: 5vh;
+    /* display: flex; */
+    /* align-items: center; */
     padding-top: 5vh;
-    justify-content: center; /* Re-enabled for center alignment */
+    /* justify-content: center; */
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 30px;
     margin: 0px; 
 }
 
 #banner h1 {
-    font-size: 50px;
+    font-size: 30px;
+    font-style: italic;
 }
 
 #banner a {
