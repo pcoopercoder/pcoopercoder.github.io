@@ -1,6 +1,8 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added for better layout consistency */
 }
 
 body {
@@ -8,14 +10,14 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Fallback font-family for cross-browser */
     width: 100%;
 }
 
-
-/* nav bar */
+/* Navigation Bar */
 header {
-    position: fixed;
+    position: -webkit-sticky; /* Safari and older browsers */
+    position: sticky;
     top: 0;
     left: 0;
     padding: 20px;
@@ -35,13 +37,14 @@ header nav ul li a {
     color: #3b3737;
     font-size: 18px;
     padding: 20px;
+    transition: color 0.3s ease; /* Added for smooth hover effect */
 }
 
 header nav ul li a:hover {
     color: #000000;
 }
-/* end */
 
+/* Sections */
 .section {
     display: flex;
     padding-bottom: 5vh;
@@ -54,14 +57,14 @@ header nav ul li a:hover {
     padding-top: 5%;
 }
 
-/* Banner styling */
+/* Banner Styling */
 #banner {
     height: 20vh;
     padding-bottom: 3vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     padding-top: 5vh;
+    justify-content: center; /* Re-enabled for center alignment */
 }
 
 h1 {
@@ -71,31 +74,22 @@ h1 {
 
 #banner h1 {
     font-size: 50px;
-    /* color: rgb(0, 0, 0); */
 }
 
 #banner a {
     text-decoration: none;
-    font-size:25px; 
+    font-size: 25px; 
     color: #3b3737;
     padding: 3px;
 }
 
-/* #name_flex {
-    display: flex;
-} */
-/* end */
-
-
 /* Research Interests */
 .research-interests {
     display: flex;
-    align-items: center; 
-    /* gap: 20px;  */
+    align-items: center;
 }
 
-/* end */
-
+/* Footer */
 footer {
     background-color: #f1f1f1;  
     color: #333;                
@@ -104,6 +98,12 @@ footer {
     font-size: 14px;            
     position: relative;
     bottom: 0;
-    /* width: 100%; */
     margin-top: 40px;           
+}
+
+/* Flexbox Fallbacks for Older Browsers */
+@supports not (display: flex) {
+    .section, .research-interests {
+        display: block; /* Use block layout for older browsers that don’t support flexbox */
+    }
 }
