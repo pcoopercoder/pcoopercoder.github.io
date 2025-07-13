@@ -64,8 +64,13 @@ header nav ul li a:hover {
     padding-top: 5vh;
 }
 
+h1 {
+    font-size: 50px;
+    /* color: rgb(0, 0, 0); */
+}
+
 #banner h1 {
-    font-size: 150px;
+    font-size: 50px;
     /* color: rgb(0, 0, 0); */
 }
 
