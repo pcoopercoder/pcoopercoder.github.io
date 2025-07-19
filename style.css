@@ -74,6 +74,12 @@ header nav ul li a:hover {
     /* justify-content: center; */
 }
 
+#headshot {
+    max-width: 180px;
+    height: auto;
+    padding-right: 2vh;
+}
+
 h1 {
     font-size: 30px;
     margin: 0px; 
