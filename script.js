@@ -30,16 +30,29 @@ let charMap = {
     "C" : ["C"],
 };
 
-// Smooth scrolling functionality
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+    const OFFSET = document.querySelector("header").offsetHeight || 60;
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - OFFSET;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
         });
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -62,8 +75,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function typeWriterEffect(elementId, text, delay) {
-    console.log("hello");
-
     // let charmap = unicodeStd;
 
     const targetElement = document.getElementById(elementId);
@@ -83,15 +94,10 @@ function typeWriterEffect(elementId, text, delay) {
             const charSpan = targetElement.children[i]; // Get the current span element
             let lookup = text[i];
 
-            // console.log(lookup.toLowerCase())
-            // console.log("hhhhhhhhhhhhhhhh");
-            // console.log(charMap)
             const randomIndex = Math.floor(Math.random() * charMap[lookup].length);
-            // console.log(randomIndex)
             let newChar = charMap[lookup][randomIndex];
-            // console.log(text, randomIndex);
 
-            console.log(newChar)
+            // console.log(newChar)
 
             charSpan.textContent = newChar; // Update the current character in the span
             charSpan.style.opacity = 0; // Reset opacity to 0 for fade-in effect
