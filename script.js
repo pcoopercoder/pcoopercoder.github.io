@@ -97,7 +97,7 @@ function typeWriterEffect(elementId, text, delay) {
             const randomIndex = Math.floor(Math.random() * charMap[lookup].length);
             let newChar = charMap[lookup][randomIndex];
 
-            // console.log(newChar)
+            // console.log(newChar)  
 
             charSpan.textContent = newChar; // Update the current character in the span
             charSpan.style.opacity = 0; // Reset opacity to 0 for fade-in effect
