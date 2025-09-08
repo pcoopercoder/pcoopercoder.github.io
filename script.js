@@ -30,7 +30,8 @@ let charMap = {
     "C" : ["C"],
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+        
+function scroll_func() {
     const OFFSET = document.querySelector("header").offsetHeight || 60;
 
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-});
+}
 
 
 
@@ -70,7 +71,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Insert the formatted date into the footer
     document.getElementById('last-updated').textContent = formattedDate;
 
+    scroll_func();
+
     typeWriterEffect('animatedText', 'Portia  Cooper', 100); // 100ms delay per character
+    
 });
 
 
