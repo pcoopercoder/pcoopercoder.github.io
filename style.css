@@ -12,7 +12,10 @@ body {
     flex-direction: column;
     font-family: "Noto Sans", sans-serif; /* Fallback font-family for cross-browser */
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
+
 
 /* Navigation Bar */
 header {
@@ -21,7 +24,8 @@ header {
     top: 0;
     left: 0;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(236, 241, 249, 0.9);
+    /* rgba(255, 255, 255, 0.9); */
     z-index: 1000;
     width: 100%;
 }
@@ -39,8 +43,8 @@ a {
 header nav ul li a {
     text-decoration: none;
     color: #3b3737;
-    font-size: 18px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 60px;
     transition: color 0.3s ease; /* Added for smooth hover effect */
 }
 
@@ -56,15 +60,23 @@ header nav ul li a:hover {
     padding-bottom: 5vh;
 }
 
+hr {
+    border: none;
+    height: 2px;
+    background-color: rgb(184, 192, 206);
+    margin: 15px 0;
+}
+
 #pad_in {
+    max-width: 2000px;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 #animatedText span {
-    font-size: 60px;
+    font-size: 75px;
     margin: 0px; 
     padding: 0px;
     font-family: "Noto Sans", sans-serif;
@@ -81,10 +93,16 @@ header nav ul li a:hover {
 }
 
 #headshot {
-    width: 190px;
-    height: 190px;
+    /* width: 190px;
+    height: 190px; */
+    width: 20%;
+    height: 20%;
+    max-width: 250px;
+    max-height: 250px;
     /* aspect-ratio: 1.1; */
     margin-right: 35px;
+    border-radius: 20px;
+    border: 2px solid rgb(67, 84, 118);
 }
 
 h1 {
@@ -119,14 +137,15 @@ h1 {
 
 /* Footer */
 footer {
-    background-color: #f1f1f1;  
+    background-color: #f7f9ff;  
     color: #333;                
     text-align: center;        
     padding: 20px;              
     font-size: 14px;            
     position: relative;
     bottom: 0;
-    margin-top: 40px;           
+    margin-top: 20px;      
+    width: 100%;     
 }
 
 /* Flexbox Fallbacks for Older Browsers */

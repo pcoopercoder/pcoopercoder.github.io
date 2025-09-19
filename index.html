@@ -33,130 +33,133 @@
 
     <div id="pad_in">
 
-    <section id="banner" class="section">
-        <img id="headshot" src="dots_website.JPG">
-        <div id="name_info">
-            <span id="animatedText"></span>
-                <h1>Portia Cooper</h1>  
-                <a href="mailto:portiacooper@arizona.edu" class="fa-solid fa-envelope"></a>
-                <a href="https://scholar.google.com/citations?user=aGk7Tu0AAAAJ&hl=en" class="fa-brands fa-google-scholar"></a>
-                <a href="https://www.linkedin.com/in/portia-cooper" class="fa-brands fa-linkedin"></a>
-                <a href="https://github.com/pcoopercoder" class="fa-brands fa-github"></a>
-                <a href="CV_Portia Cooper.pdf" class="fa-solid fa-file"></a>
-                <br><br> 
-        </div>
-    </section>
-
-    <section class="section">
-        <p>
-            I am a M.S. student in the Department of Computer Science at the University of Arizona working with <b>Dr. Mihai Surdeanu</b> and <b>Dr. Eduardo Blanco</b>. Also, I work with <b>Dr. Jaimie Murdock</b> as a year-round research and development intern at  Sandia National Labratories.
-            <!-- In 2024, I was awarded the Barry M Goldwater scholarship. -->
-        </p>    
-    </section>
-
-
-    <section id="research" class="section">
-        <div class="research-interests">
-            <div>
-                <h2>Research Interests</h2>
-                <p>
-                    My interests lie at the intersection of natural language processing and AI security, with a focus on building
-                    systems resilient to adversarial attacks. I have led studies investigating Unicode perturbation detection, text
-                    normalization, AI-optimized case selection for content moderation, and malicious text-to-image prompt
-                    mitigation. My work reflects a deep-rooted enthusiasm for creating safer, more trustworthy AI systems. 
-                </p>
-
-                <!-- Through my work at Sandia National Labratories, I have extensive experience refining information retrival mehtods and building tools for scientific onotlogy creation and relation extraction. -->
-
-            </div>     
-            <!-- <img src="headshot.JPG" alt="Headshot picture" id="headshot"> -->
-        </div>
-    </section>
-
-    <section id="publications" class="section">
-        <textarea id="bibtex_input" style="display:none;">
-                @inproceedings{cooper2025lies,
-                title={The Lies Characters Tell: Utilizing Large Language Models to Normalize Adversarial Unicode Perturbations},
-                author={Cooper, Portia and Blanco, Eduardo and Surdeanu, Mihai},
-                booktitle={Findings of the Association for Computational Linguistics: ACL 2025},
-                pages={18932--18944},
-                year={2025},
-                url={https://aclanthology.org/2025.findings-acl.969/}
-                }
-            
-                @article{cooper2024finding,
-                title={Finding a Wolf in Sheep's Clothing: Combating Adversarial Text-To-Image Prompts with Text Summarization},
-                author={Cooper, Portia and Narnoli, Harshita and Surdeanu, Mihai},
-                journal={arXiv preprint 2024, arXiv:2412.12212},
-                year={2024},
-                url={https://arxiv.org/abs/2412.12212}
-                }
-
-                @inproceedings{cooper2023hiding,
-                title={Hiding in Plain Sight: Tweets with Hate Speech Masked by Homoglyphs},
-                author={Cooper, Portia and Surdeanu, Mihai and Blanco, Eduardo},
-                booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
-                pages={2922--2929},
-                year={2023},
-                url={https://aclanthology.org/2023.findings-emnlp.192/}
-                }
-        </textarea>
-        <div class="bibtex_template">
-            <p>
-                    <strong><span class="title"></span></strong>
-                    <br>
-                    <span class="author"></span>.
-                    <em><span class="if journal"><span class="journal"></span>. </span></em>
-                    <em><span class="if booktitle"><span class="booktitle"></span>. </span></em>
-                    <span class="if pages">pp. <span class="pages"></span>. </span>
-                    <span class="if doi">doi:<span class="doi"></span>. </span>
-                    <br>
-                    <span class="if url"><a class="url">Read Paper <i class="fa-solid fa-file"></i></a></span>
-                    <br><br>
-                    
-            </p>
-        </div>
-        <div>
-            <h2>Publications</h2>
-            <div id="bibtex_display"></div>
-            <em><p>For more information, please see my <a href="https://scholar.google.com/citations?user=aGk7Tu0AAAAJ&hl=en">Google Scholar profile</a>.</p></em>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div>
-            <h2>Project Highlights</h2>
-            <br>
-            
-            <h3>Homoglyph Visualization</h3>
-
-            <p>
-                 A significant subset of Unicode characters are visually similar to Latin letters but possess disjointed symbolic and linguistic meanings. For example, the Latin "a" and the Cyrillic "a" appear visually homogeneous, but their underlying Unicode code points, U+0061 and U+0430, are not equivalent. The noise induced by homoglyphs has ramifications within the fields of cybersecurity and natural language processing, as homoglyphs have been found in material ranging from spoofed domain names to inappropriate tweets.
-<br><br>
-                This visualization allows for a direct comparison between the 26 Latin letters and the non-Latin homoglyphs they have in common, determined by 1) the Unicode Std, 2) a Human Annotator, and 3) GPT 4o as a normalization tool.
-            </p>
-            <br>
-            <!-- View the Letter Viual Similarity Matrix -->
-            <a href="viz.html" target="_blank">
-            <img id = "viz_footer" title="Click to view interactive visualization" src="Screenshot 2025-07-19 074738.png"/></a>
-
-            <br><br><br>
-
-            <h3>Gerrymandering Redistricting Simulation</h3>
-
-            <p>
-                Gerrymandering is the process in which the boundaries of electoral districts are decided in a way that favors a specific political group. 
-                The following system ensures a valid redistricted map was always possible. A valid map must contain only contiguous districts with relatively equal populations.
-</p>
-            <br>
-            <!-- View the Letter Viual Similarity Matrix -->
-            <a href="gerrymandering.html" target="_blank">
-            <img id = "viz_footer" title="Click to play gerrymandering tic tac toe" src="Screenshot 2025-07-26 145057.png"/></a>
-        </div>
+        <section id="banner" class="section">
+            <img id="headshot" src="dots_website.JPG">
+            <div id="name_info">
+                <span id="animatedText"></span>
+                    <h1>Portia Cooper</h1>  
+                    <a href="mailto:portiacooper@arizona.edu" class="fa-solid fa-envelope"></a>
+                    <a href="https://scholar.google.com/citations?user=aGk7Tu0AAAAJ&hl=en" class="fa-brands fa-google-scholar"></a>
+                    <a href="https://www.linkedin.com/in/portia-cooper" class="fa-brands fa-linkedin"></a>
+                    <a href="https://github.com/pcoopercoder" class="fa-brands fa-github"></a>
+                    <a href="CV_Portia Cooper.pdf" class="fa-solid fa-file"></a>
+                    <br><br> 
+            </div>
         </section>
 
-    </div>
+        <section class="section">
+            <p>
+                I am a M.S. student in the Department of Computer Science at the University of Arizona working with <b>Dr. Mihai Surdeanu</b> and <b>Dr. Eduardo Blanco</b>. Also, I work with <b>Dr. Jaimie Murdock</b> as a year-round research and development intern at  Sandia National Labratories.
+                <!-- In 2024, I was awarded the Barry M Goldwater scholarship. -->
+            </p>    
+        </section>
 
+        <!-- <hr> -->
+
+        <section id="research" class="section">
+            <div class="research-interests">
+                <div>
+                    <h2>Research Interests</h2>
+                    <p>
+                        My interests lie at the intersection of natural language processing and AI security, with a focus on building
+                        systems resilient to adversarial attacks. I have led studies investigating Unicode perturbation detection, text
+                        normalization, AI-optimized case selection for content moderation, and malicious text-to-image prompt
+                        mitigation. My work reflects a deep-rooted enthusiasm for creating safer, more trustworthy AI systems. 
+                    </p>
+
+                    <!-- Through my work at Sandia National Labratories, I have extensive experience refining information retrival mehtods and building tools for scientific onotlogy creation and relation extraction. -->
+
+                </div>     
+                <!-- <img src="headshot.JPG" alt="Headshot picture" id="headshot"> -->
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="publications" class="section">
+            <textarea id="bibtex_input" style="display:none;">
+                    @inproceedings{cooper2025lies,
+                    title={The Lies Characters Tell: Utilizing Large Language Models to Normalize Adversarial Unicode Perturbations},
+                    author={Cooper, Portia and Blanco, Eduardo and Surdeanu, Mihai},
+                    booktitle={Findings of the Association for Computational Linguistics: ACL 2025},
+                    pages={18932--18944},
+                    year={2025},
+                    url={https://aclanthology.org/2025.findings-acl.969/}
+                    }
+                
+                    @article{cooper2024finding,
+                    title={Finding a Wolf in Sheep's Clothing: Combating Adversarial Text-To-Image Prompts with Text Summarization},
+                    author={Cooper, Portia and Narnoli, Harshita and Surdeanu, Mihai},
+                    journal={arXiv preprint 2024, arXiv:2412.12212},
+                    year={2024},
+                    url={https://arxiv.org/abs/2412.12212}
+                    }
+
+                    @inproceedings{cooper2023hiding,
+                    title={Hiding in Plain Sight: Tweets with Hate Speech Masked by Homoglyphs},
+                    author={Cooper, Portia and Surdeanu, Mihai and Blanco, Eduardo},
+                    booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
+                    pages={2922--2929},
+                    year={2023},
+                    url={https://aclanthology.org/2023.findings-emnlp.192/}
+                    }
+            </textarea>
+            <div class="bibtex_template">
+                <p>
+                        <strong><span class="title"></span></strong>
+                        <br>
+                        <span class="author"></span>.
+                        <em><span class="if journal"><span class="journal"></span>. </span></em>
+                        <em><span class="if booktitle"><span class="booktitle"></span>. </span></em>
+                        <span class="if pages">pp. <span class="pages"></span>. </span>
+                        <span class="if doi">doi:<span class="doi"></span>. </span>
+                        <br>
+                        <span class="if url"><a class="url">Read Paper <i class="fa-solid fa-file"></i></a></span>
+                        <br><br>
+                        
+                </p>
+            </div>
+            <div>
+                <h2>Publications</h2>
+                <div id="bibtex_display"></div>
+                <em><p>For more information, please see my <a href="https://scholar.google.com/citations?user=aGk7Tu0AAAAJ&hl=en">Google Scholar profile</a>.</p></em>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="projects" class="section">
+            <div>
+                <h2>Project Highlights</h2>
+                <br>
+                
+                <h3>Homoglyph Visualization</h3>
+
+                <p>
+                    A significant subset of Unicode characters are visually similar to Latin letters but possess disjointed symbolic and linguistic meanings. For example, the Latin "a" and the Cyrillic "a" appear visually homogeneous, but their underlying Unicode code points, U+0061 and U+0430, are not equivalent. The noise induced by homoglyphs has ramifications within the fields of cybersecurity and natural language processing, as homoglyphs have been found in material ranging from spoofed domain names to inappropriate tweets.
+                <br><br>
+                    This visualization allows for a direct comparison between the 26 Latin letters and the non-Latin homoglyphs they have in common, determined by 1) the Unicode Std, 2) a Human Annotator, and 3) GPT 4o as a normalization tool.
+                </p>
+                <br>
+                <!-- View the Letter Viual Similarity Matrix -->
+                <a href="viz.html" target="_blank">
+                <img id = "viz_footer" title="Click to view interactive visualization" src="Screenshot 2025-07-19 074738.png"/></a>
+
+                <br><br><br>
+
+                <h3>Gerrymandering Redistricting Simulation</h3>
+
+                <p>
+                    Gerrymandering is the process in which the boundaries of electoral districts are decided in a way that favors a specific political group. 
+                    The following system ensures a valid redistricted map was always possible. A valid map must contain only contiguous districts with relatively equal populations.
+                </p>
+                <br>
+                <!-- View the Letter Viual Similarity Matrix -->
+                <a href="gerrymandering.html" target="_blank">
+                <img id = "viz_footer" title="Click to play gerrymandering tic tac toe" src="Screenshot 2025-07-26 145057.png"/></a>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>Portia Cooper, <span id="current-year"></span> | Last updated: <span id="last-updated"></span>.</p>
